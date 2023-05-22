@@ -14,9 +14,15 @@ END
 
 /*Kreiranje dva korisnicka naloga sa lozinkom lozinka*/
 create login Nastavnik with password = 'lozinka'
-create login Student with password = 'lzoinka'
+create login Student with password = 'lozinka'
 
 use Fakultet_Audit
 create user Nastavnik  for login Nastavnik
 create user Student  for login Student
+go
+
+use Fakultet_Audit
+grant SELECT to Nastavnik
+grant SELECT to Student
+grant INSERT to Nastavnik
 
